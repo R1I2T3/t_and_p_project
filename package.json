@@ -11,5 +11,8 @@
   "description": "",
   "dependencies": {
     "tailwindcss": "^3.4.9"
+  },
+  "devDependencies": {
+    "daisyui": "^4.12.10"
   }
 }

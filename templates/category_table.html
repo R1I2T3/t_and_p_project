@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Category table{% endblock title %}
+{% block content %}
+    <div class="overflow-x-auto">
+        <table class="min-w-full text-left text-sm font-light">
+          <thead class="border-b bg-gray-800 text-white">
+            <tr>
+              <th scope="col" class="px-6 py-4">NAME OF THE STUDENT</th>
+              <th scope="col" class="px-6 py-4">CGPA</th>
+              <th scope="col" class="px-6 py-4">CONSENT</th>
+              <th scope="col" class="px-6 py-4">AY</th>
+              <th scope="col" class="px-6 py-4">TY</th>
+              <th scope="col" class="px-6 py-4">CATEGORY</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            {% for student in data %}
+            <tr class="border-b hover:bg-gray-100">
+                <td class="px-6 py-4">{{student["NAME OF THE STUDENT"]}}</td>
+                <td class="px-6 py-4">{{student["CGPA"]}}</td>
+                <td class="px-6 py-4">{{student["CONSENT"]}}</td>
+                <td class="px-6 py-4">{{student["AY"]}}</td>
+                <td class="px-6 py-4">{{student["TY"]}}</td>
+                <td class="px-6 py-4">{{student["CATEGORY"]}}</td>
+
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+</div>
+{% endblock content %}
