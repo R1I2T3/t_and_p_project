@@ -1,5 +1,30 @@
 {% extends "base.html" %}
 {% block title %}Input Form{% endblock title %}
 {% block content %}
-  <h1 class="bg-red-400">Hello world</h1>
+  <main class="w-full min-h-[100dvh] flex flex-col justify-center items-center">
+    <form class="w-[40%] flex flex-col rounded-xl shadow-xl border-2 border-black p-3" action="." method='post' enctype="multipart/form-data">
+      <h1 class="text-center text-2xl font-bold">Category Decide</h1>
+      <div class="flex flex-col gap-2">
+        <label for="select_file">Select csv file</label>
+        <input type="file" name="select_file" id="select_file" class="mb-3 block w-full text-sm text-gray-500
+                file:mr-4 file:py-2 file:px-4
+                file:rounded-full file:border-0
+                file:text-sm file:font-semibold
+                file:bg-blue-50 file:text-blue-700
+                hover:file:bg-blue-100
+                focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
+                transition-colors duration-300 ease-in-out"/>
+        <button class="bg-blue-500 p-1 text-white rounded-xl" type="submit">Submit</button>
+      </div>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li class="bg-red-500 mt-3 p-3 rounded">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+  </main>
 {% endblock content %}
